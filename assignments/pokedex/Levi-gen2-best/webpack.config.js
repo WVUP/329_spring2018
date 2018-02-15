@@ -9,7 +9,7 @@ module.exports = {
            path.resolve(assetsPath,'index.js')],
     },
     output: {
-        chunkFilename: '[name].js',
+        chunkFilename: '[name].js', 
         filename: '[name].js', //
         path: path.join(assetsPath ,"dist/js/"),
         publicPath: 'http://localhost:8080/assets/'
