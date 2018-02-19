@@ -6,11 +6,50 @@ class PokeApp extends Component{
   render(){
     return <div className="pokeapp">
       <h1> The Kanto PokeDex! </h1>
+      <input type="text" placeholder="Search" id="filter_pokemon"/>
+
+<ul id="poke-list">
+
+</ul>
       <PokemonList/>
     </div>;
   }
 }
+/*
+class SearchPokemon extends Component{
+  ul = document.getElementById("poke-list");
+  
+  
+  pokes = document.getElementById("pokemon--species--list");
 
+  //var render_lists = function(lists)
+  {
+    var li = "";
+    for(index in lists)
+    {
+      li += "<li>" + lists[index] + "</li>";
+    }
+    ul.innerHTML = li;
+  }
+  render_lists(pokes);
+
+  
+
+  input = document.getElementById('filter-pokemon');
+  var filterPokes = function(event)
+  {
+    keyword = input.value.toLowerCase();
+    filtered_Pokemon = pokes.filter(function(poke)
+    {
+         poke = poke.toLowerCase();
+         return poke.indexOf(keyword) > -1;
+     });
+     render_lists(filtered_Pokemon);
+  }
+
+  input.addEventListener('keyup', filterPokes);
+}
+*/
 class Pokemon extends Component{
   render(){
     const {pokemon,id} = this.props;
