@@ -10,6 +10,8 @@ import { isNull } from 'util';
 class Pokemon extends Component{
   render(){
     const {pokemon,id} = this.props;
+    parsePokedexId(pokemon)
+
     return <div className="pokemon--species">
             <div className="pokemon--species--container">
               <div className="pokemon--species--sprite">
@@ -21,6 +23,16 @@ class Pokemon extends Component{
     }
 }
 
+/**
+ * In the works for parseing urls
+ * @param {} pokemonJson 
+ */
+function parsePokedexId(pokemonJson)
+{
+    console.log(pokemonJson);
+    let id = pokemonJson.url;
+    console.log(id);
+}
 
 //The PokemonList component shows nothing when it mounts for the first time. 
 //But right before it mounts on to the DOM, it makes an 
@@ -28,75 +40,15 @@ class Pokemon extends Component{
 //then displays them using the Pokemon Component
 
 class PokemonList extends Component{
-  constructor(props){
-    super(props);
-    this.state = {
-      species : [],
-      fetched : false,
-      loading : false,
-    };
-  }
-  componentWillMount(){
-    this.setState({
-      loading : true
-    });
-    fetch('https://pokeapi.co/api/v2/pokemon/?limit=151')
-    .then(res => res.json())
-    .then(response => {
-      this.setState({
-        species : response.results,
-        loading : true,
-        fetched : true,
-      });
-    });
-  }
-
-  filterOutPokemon(find)
-  {
-    let pokemans = this.state.species;
-    console.log(pokemans);
-    let filterMans = pokemans.filter(pokemans =>{
-      console.log(pokemans.pokemon.name);
-      return pokemans.pokemon.name.contains(find);
-    });
-
-    this.setState({
-      species: filterMans
-    })
-  }
 
   render(){
-    const {fetched, loading, species} = this.state;
-    let content;
-    let inputEle = document.getElementById(42);
-
-    if(inputEle != null)
-    {
-      let target = inputEle.target;
-      //console.log(value);
-      console.log("Hello world");
-      if(target != null)
-      {
-        console.log("Hello world");
-        filterOutPokemon(target.value);
-      }
-    }
+    const species = this.props.species;
     
-    if(fetched){
-      content = <div className="pokemon--species--list">{species.map((pokemon,index)=><Pokemon key={pokemon.name} id={index+1} pokemon={pokemon}/>)}</div>;
-    }else if(loading && !fetched){
-        content = <p> Loading ...</p>;
-    }
-    else{
-      content = <div/>;
-    }
+    
+    let content = <div className="pokemon--species--list">{species.map((pokemon,index)=><Pokemon key={pokemon.name} id={index+1} pokemon={pokemon}/>)}</div>;
+
     return  <div>
-      <div>
-        <FindPokemon/>
-      </div>
-      <div>
-         {content}
-      </div>
+      {content}
     </div>;
   }
 }
@@ -106,30 +58,112 @@ class FindPokemon extends Component{
   constructor(props){
     super(props);
     this.state = {
-      find: ""
+      find: "",
+      retrievedPokemans: [],
+      filteredPokemans: [],
+      fetched : false,
+      loading : false,
+      filter: false,
     }
 
     this.captureInput = this.captureInput.bind(this);
   }
 
+  componentWillMount(){
+    this.setState({
+      loading : true
+    });
+    fetch('https://pokeapi.co/api/v2/pokemon?limit=151').then(res=>res.json())
+    .then(response=>{
+      this.setState({
+        retrievedPokemans : response.results,
+        loading : true,
+        fetched : true
+      });
+    });
+  }
+
   captureInput(input){
     console.log(input.target.value);
+
+    if(input.target.value)
+    {
+      this.setState({
+        find: input.target.value,
+        filter: true,
+      });
+
+      this.filterOutPokemon(this.state.find);
+      return;
+    }
+    
     this.setState({
-      find: input.target.value,
+      find: "",
+      filter: false,
+      filteredPokemans:[]
     });
+    
+
+    
+  }
+
+  filterOutPokemon(find)
+  {
+    let pokemans = this.state.retrievedPokemans;
+    console.log(pokemans);
+    let filterMans = pokemans.filter(pokemans =>{
+      //console.log(pokemans.name); 
+      let name = pokemans.name;
+      return String(name).includes(find);
+    });
+    console.log(filterMans);
+    this.setState({
+      filteredPokemans: filterMans,
+      filter: true,
+    })
   }
   
   render(){
 
     let find = this.state.find;
+    const retrievedPokemans = this.state.retrievedPokemans;
+    const filteredPokemans = this.state.filteredPokemans;
+    const {fetched, loading, filter} = this.state;
+    let content;
+
+    //retrievedPokemans.forEach(e => console.log(e));
+
     let finder = <input type="text" id={42} value={this.state.find} onChange={this.captureInput}/>
-    let form = (<div>
+    let form = (
+    <div>
       <form onSubmit={(e) => e.preventDefault()}> 
         {finder}
       </form>
     </div>);
 
-    return form;
+
+
+    if(filter)
+    {
+      content = <PokemonList species={filteredPokemans} />;
+    }
+    else if(fetched){
+      content = <PokemonList species={retrievedPokemans} />;
+    }else if(loading && !fetched){
+      content = <p> Loading ...</p>;
+    }
+    else{
+      content = <div/>;
+    }
+    return  <div>
+      <div>
+        {form}
+      </div>
+      <div>
+        {content}
+      </div>
+    </div>;
+
   }
 }
 
@@ -138,7 +172,7 @@ class PokeApp extends Component{
   render(){
     return <div className="pokeapp">
       <h1> The Kanto PokeDex! </h1>
-      <PokemonList/>
+      <FindPokemon/>
     </div>;
   }
 }
