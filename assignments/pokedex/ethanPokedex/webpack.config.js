@@ -19,13 +19,13 @@ module.exports = {
             {
                 //tell webpack to use jsx-loader for all *.jsx files
                 test: /.jsx?$/,
-                loaders: ['react-hot-loader/webpack','babel'],
+                loaders: ['react-hot-loader/webpack','babel-loader'],
                 include: [path.resolve(assetsPath)]
            }
         ]
     },
     resolve: {
-        extensions: ['', '.js', '.jsx']
+        extensions: [ '.js', '.jsx']
     },
     devtool : '#source-map',
 
