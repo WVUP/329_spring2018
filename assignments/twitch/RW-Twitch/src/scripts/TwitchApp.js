@@ -1,12 +1,13 @@
 import React from 'react';
-import Banner from './Banner';
+import Sidebar from './Sidebar';
+import Content from './Content';
 
 export default function TwitchApp(props){
     return (
-        <div>
-            <Banner />
-            <div className="container">
-                <p>Starter twitch app</p>
+        <div className="container-fluid">
+            <div className="row">
+                <Sidebar />
+                <Content />
             </div>
         </div>
     );
