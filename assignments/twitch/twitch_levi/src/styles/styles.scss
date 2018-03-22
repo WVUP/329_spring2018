@@ -5,3 +5,21 @@
   h1 { color: #696969; }
 
 }
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-height: 100%;
+  height: auto;
+}
+
+.leftpane{
+  max-width:20%;
+  background-color: gray;
+  height: 100%;
+  position: static;
+  left: 0;
+}
