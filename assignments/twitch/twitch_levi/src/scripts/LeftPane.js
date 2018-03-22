@@ -5,8 +5,16 @@ export default function LeftPane(props){
     return (
         <div className="container">
             <div className="leftpane">
-                Hello World
+                <SiteImagesBox/>
             </div>
+        </div>
+    );
+}
+
+const SiteImagesBox = (props)=>{
+    return (
+        <div id="twitchLogo">
+            <img src="./src/images/twitch.png" alt="Twitch Logo"/>
         </div>
     );
 }

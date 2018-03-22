@@ -3,12 +3,13 @@
   justify-content: center;
 
   h1 { color: #696969; }
-
 }
 
 body{
   margin: 0;
   padding: 0;
+  height: 100%;
+  width: 100%;
 }
 
 img {
@@ -16,10 +17,17 @@ img {
   height: auto;
 }
 
+#twitchLogo{
+  width:20%;
+}
+
 .leftpane{
   max-width:20%;
+  min-width:20%;
   background-color: gray;
   height: 100%;
-  position: static;
+  border-color: black;
+  border-style: solid;
+  position: fixed;
   left: 0;
 }
