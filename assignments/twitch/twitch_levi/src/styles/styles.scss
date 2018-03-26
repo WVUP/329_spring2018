@@ -1,0 +1,79 @@
+#react-container {
+  display:flex;
+  justify-content: center;
+
+  h1 { color: #696969; }
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#twitchLogo{
+  max-width: 60%;
+  padding-top:2%;
+  max-height: 10%;
+  margin: auto;
+}
+
+#userBox{
+  max-width: auto;
+  max-height: 10%;
+}
+
+#userPic{
+  width: 60px;
+  padding:5px;
+}
+
+#searchBox{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 8%;
+  margin: 1%;
+}
+
+.leftpane{
+  max-width:20%;
+  min-width:20%;
+  background-color: gray;
+  height: 100%;
+  border-color: black;
+  border-style: solid;
+  border-collapse: collapse;
+  position: fixed;
+  left: 0;
+}
+
+#userContent{
+  position: relative;
+  background: rgb(35, 38, 41);
+  height: 78%;
+}
+
+.textAlign{
+  text-align: center;
+}
+
+.rightpane{
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: auto;
+  background-color: black;
+}
+
+#arrowone{
+  position: relative;
+
+}
+#arrowtwo{
+  position: relative;
+}
+#arrowthree{
+  position: relative; 
+}
