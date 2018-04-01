@@ -33,17 +33,17 @@ class Content extends Component {
             console.log('Data:')
             console.log(this.state.data)
             var streams = this.state.data;
-            var streamCards = streams.map((stream) =>
-            <StreamCard data={stream} />
-            );
+            if(streams){
+                var streamCards = streams.map((stream) =>
+                <StreamCard data={stream} key={stream.user_id}/>
+                );
+            }
         }
 
         
         return (
-            <div className="content col-lg-10">
-                <h1>Twitch content!</h1>
-                <h2>{this.state.loaded.toString()}</h2>
-                <ul>{streamCards}</ul>
+            <div className="content">
+                <div className="container-fluid"><div className="row">{streamCards}</div></div>
             </div>
         );
     }

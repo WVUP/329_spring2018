@@ -4,18 +4,27 @@
 }
 
 .page-sidebar {
-  h1 { 
-    color: #FFF;
-    margin-top: 0;
-  }
   background-color: #6441A4;
-  margin: 0;
-  height: 100vh;
+  height: 100%;
+  width: 15vw;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
 }
 
 .content {
+  h1 { 
+    color: #FFF;
+    margin-top: 0 !important;
+  }
+  padding-top: 2vh;
   background-color: gray;
-  height: 100vh;
+  top: 0;
+  height: 100%;
+  width: 85%;
+  margin-left: 15vw;
 }
 
 .title {
@@ -23,8 +32,15 @@
 }
 
 .Logo {
-  width: 50%;
+  width: 75%;
   height: auto;
   margin: 0 auto;
   padding-top: 10px;
+}
+
+.StreamCard {
+  align-content: center;
+  padding: 1vh 1vh;
+  border: black;
+  border-style: solid;
 }
