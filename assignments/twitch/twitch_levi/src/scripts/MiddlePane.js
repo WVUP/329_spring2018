@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import RightPane from './RightPane';
 
 //Used for Requesting in Header
-const ClientID = "<Client Id Here>";
+const ClientID = "<ClientID>";
 
 //Ghetto way of doing it
 function boxArtParser(boxArtUrl, width, height){
@@ -16,7 +17,7 @@ function boxArtParser(boxArtUrl, width, height){
 
 const Game = (props) =>{
   return (
-    <div className="game">
+    <div className="game col-md-3">
         <div className='media-top'>
             <img className='media-object' src= {boxArtParser(props.box_art_url, 200, 250)} alt="Game Picture"/>
         </div>
@@ -31,7 +32,7 @@ const Game = (props) =>{
 }
 
 const GameList = (props) =>{
-    return <div>
+    return <div className="row">
         {props.Games.map(game => <Game key={game.name} {...game}/>)}
     </div>
 };

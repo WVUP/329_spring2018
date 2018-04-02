@@ -9,7 +9,7 @@ export default function TwitchApp(props){
         <div className="container-fluid">
             <LeftPane/>
             <MiddlePane />
-            {/* <RightPane/> */}
+            <RightPane/>
         </div>
     );
 };

@@ -66,39 +66,38 @@ body{
 }
 
 .rightpane{
-  position: absolute;
+  position: fixed;
   right: 0;
+  top: 0;
   height: 100%;
   width: auto;
   background-color: black;
 }
 
-#arrowone{
-  position: relative;
-
-}
-#arrowtwo{
-  position: relative;
-}
-#arrowthree{
-  position: relative; 
-}
-
 #middlePane{
   position: absolute;
+  left: 0;
   background-color: #6441A4;
   min-height: 100%;
   min-width: 80%;
-  //Terrible idea change this later
-  margin: 0 0.45%;
-  padding: 1%;
-  // padding-left: 20%;
+  margin-left: 20%;
+  padding:2%;
 }
 
 .game{
-  display: inline-block;
-  width: 20%;
-  height: 20%;
+  // display: inline-block;
+  // width: 20%; 
+  // height: 20%;
   margin: auto;
   color: gray;
+}
+
+.arrowContainer{
+  height: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  color:white;
 }
