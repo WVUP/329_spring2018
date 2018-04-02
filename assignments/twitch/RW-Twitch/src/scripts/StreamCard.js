@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 const api = `https://api.twitch.tv/helix/users?id=`
-let loaded = false
 
 class StreamCard extends Component {
     constructor(props) {
@@ -30,7 +29,7 @@ class StreamCard extends Component {
                 <div className="col-md-3 StreamCard">
                     <img className="" src={thumbURL} alt="Thumbnail"/>
                     <div className="">
-                        <h5 className="">{this.state.user.display_name}</h5>
+                        <b className="">{this.state.user.display_name}</b>
                         <p className="c">{this.state.data.title}</p>
                     </div>
                 </div>

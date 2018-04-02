@@ -32,15 +32,28 @@
 }
 
 .Logo {
-  width: 75%;
+  width: 65%;
   height: auto;
   margin: 0 auto;
   padding-top: 10px;
 }
 
 .StreamCard {
-  align-content: center;
+  text-align: center;
   padding: 1vh 1vh;
-  border: black;
+  border: black 1px;
   border-style: solid;
+  margin-left: 1vw;
+}
+
+.StreamRow {
+  display: flex;
+  float: none;
+  margin: 1vh auto;
+}
+
+.StreamContainer{
+  width: 75%;
+  float: none;
+  margin: 0 auto;
 }
