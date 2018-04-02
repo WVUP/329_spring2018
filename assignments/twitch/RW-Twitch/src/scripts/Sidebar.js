@@ -5,7 +5,7 @@ import User from './User';
 
 export default function Sidebar(props) {
     return (
-        <div className="page-sidebar col-lg-2">
+        <div className="page-sidebar">
         <Logo />
         </div>
     );
