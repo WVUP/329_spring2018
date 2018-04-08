@@ -1,7 +1,42 @@
 #react-container {
   display:flex;
   justify-content: center;
-
-  h1 { color: #696969; }
-
+  align-items: center;
+  height: 100%;
 }
+
+.sidenav{
+   height:100%;
+   width: 400px;
+   position: fixed;
+   z-index: 1;
+   top:0;
+   left:0;
+   background-color: #474747;
+   overflow-x: hidden; 
+
+
+    p { color: #696969; font-size: 30px; }
+    h1 { position: absolute; top: 45px; left:60px;}
+    #twitchLogo {float: left; width: 250px; }
+    #userLogo {  height:40px; width:40px; }
+}
+#gamesDiv {
+  padding-left: 420px;
+}
+.games{
+  
+  -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+  display: flex-start;   
+  flex-wrap: wrap;
+  
+  h1{
+    font-size: 25px;
+  }
+}
+
+#gameBox{
+      height: 250px;
+}
+
+

@@ -19,22 +19,28 @@ body{
   margin: auto;
 }
 
-#userBox{
+.userBox{
   max-width: auto;
   max-height: 10%;
 }
 
-#userPic{
+.userPic{
   width: 60px;
   padding:5px;
 }
 
 #searchBox{
-  position: absolute;
+  position: fixed;
+  min-width: 20%;
+  max-width: 20%;
   bottom: 0;
-  width: 100%;
-  height: 8%;
-  margin: 1%;
+  height: auto;
+  margin: auto;
+  padding: 1%;
+}
+
+.searchField{
+  width: 90%;
 }
 
 .leftpane{
@@ -52,7 +58,7 @@ body{
 #userContent{
   position: relative;
   background: rgb(35, 38, 41);
-  height: 78%;
+  height: 100%;
 }
 
 .textAlign{
@@ -60,20 +66,38 @@ body{
 }
 
 .rightpane{
-  position: absolute;
+  position: fixed;
   right: 0;
+  top: 0;
   height: 100%;
   width: auto;
   background-color: black;
 }
 
-#arrowone{
-  position: relative;
+#middlePane{
+  position: absolute;
+  left: 0;
+  background-color: #6441A4;
+  min-height: 100%;
+  min-width: 80%;
+  margin-left: 20%;
+  padding:2%;
+}
 
+.game{
+  // display: inline-block;
+  // width: 20%; 
+  // height: 20%;
+  margin: auto;
+  color: gray;
 }
-#arrowtwo{
-  position: relative;
-}
-#arrowthree{
-  position: relative; 
+
+.arrowContainer{
+  height: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  color:white;
 }
