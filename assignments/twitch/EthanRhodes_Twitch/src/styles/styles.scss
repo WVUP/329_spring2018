@@ -4,4 +4,77 @@
 
   h1 { color: #696969; }
 
+  .background
+  {
+      background: #4b367c;
+      width: 100%;
+      height: 100%;
+      z-index: -13;
+  }
+
+  .leftside
+  {
+      left: 0;
+      position: fixed;
+      width: 15%;
+      height: 100%;
+      background: rgb(48, 47, 47); 
+      #logo
+      {
+          position: relative;
+          top: 0;
+          width: 45%;
+      }
+    
+      #icon
+      {
+          position: relative;
+          top: 0;
+          width: 45%;
+      }
+    
+      .topleft
+      {
+          height: 15%;
+          background: grey;
+      }
+    
+      .search
+      {
+          position: absolute;
+          width: 100%;
+          bottom: 0;
+          background: white;
+      }
+      .purpbar
+      {
+          position: relative;
+          margin-top: 3%;
+          margin-left: 5px;
+          margin-right: 5%;
+          background: #4b367c;
+          border-style: solid;
+          width: 96%;
+          border-radius:10%;
+          height: 3%;
+          border-color: white;
+      }
+  }
+  
+  .rightside
+  {
+      right: 0;
+      position: fixed;
+      width: 15%;
+      height: 100%;
+      background: rgb(48, 47, 47) 
+  }
+
+
+
+  .mid
+  {
+      text-align: center;
+  }
+
 }
