@@ -2,12 +2,48 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>Twitch App</title>
     <link href="styles.css" rel="stylesheet">
+
+    <title>Twitch</title>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Our Custom CSS -->
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
 </head>
 <body>
 <div id="react-container">
 </div>
+<!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!-- Bootstrap Js CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Custom Scroller Js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="main.js"></script>
+
 </body>
+<div class="wrapper">
+
+    <nav id="sidebar">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header">
+            <h3>Twitch</div>
+        </div>
+
+        <!-- Sidebar Links -->
+        <ul class="list-unstyled components">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">User</a></li>
+            <li><!-- Link with dropdown items -->
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">UserName</a>
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li><a href="#">UserName</a></li>
+                    <li><a href="#">UserName</a></li>
+                    <li><a href="#">UserName/a></li>
+                </ul>
+        </ul>
+    </nav>
+
+</div>
 </html>
