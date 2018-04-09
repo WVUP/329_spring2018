@@ -7,7 +7,7 @@
 
 .sidenav{
    height:100%;
-   width: 400px;
+   width: 25%;
    position: fixed;
    z-index: 1;
    top:0;
@@ -17,26 +17,72 @@
 
 
     p { color: #696969; font-size: 30px; }
-    h1 { position: absolute; top: 45px; left:60px;}
+    
     #twitchLogo {float: left; width: 250px; }
-    #userLogo {  height:40px; width:40px; }
+    #userLogo {  height:40px; width:40px;}
+
+    .top{
+      background-color: #b9b0b0;
+      height: 20%;
+    }
+    .media{
+      position: absolute; top: 70px; left:20px;
+    }
+
+    .searchBar {
+      position:absolute;
+      left:10%;
+      top:95%;
+      .searchField{
+        position:absolute;
+        left:45%;
+        top:95%;
+      width:30%;
+      background-color:white;
+      color:grey;
+      }
+      .submitButton{
+        position: absolute;
+
+      }
+    }
 }
+
 #gamesDiv {
-  padding-left: 420px;
+   padding-left: 400px;
 }
-.games{
-  
+.row{
+  padding: 3px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.following{
+  color: red;
+}
+.games{  
   -webkit-flex-wrap: wrap; /* Safari 6.1+ */
   display: flex-start;   
-  flex-wrap: wrap;
-  
-  h1{
-    font-size: 25px;
+  flex-wrap: wrap;  
+  padding-right: 10px;
+
+  h3{
+    overflow: hidden;
+    padding: 5% 10% 0% 0%;
+  }
+
+  h4{
+    overflow: hidden;   
+    position: initial;        
   }
 }
 
 #gameBox{
       height: 250px;
+      float: left;
 }
 
 
