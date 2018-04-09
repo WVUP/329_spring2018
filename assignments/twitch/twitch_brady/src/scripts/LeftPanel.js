@@ -6,7 +6,6 @@ export default function LeftPanel(props){
         <div>
             <div className="container">
             <div className="col-4 leftPanel"><TwitchLogo/></div>
-            <div className="col-8 html"></div>
             </div>
             <div>
             <body>
@@ -16,3 +15,4 @@ export default function LeftPanel(props){
         </div>
     );
 };
+//<div className="col-8 html"></div>

@@ -10,5 +10,3 @@ export default function Banner(props) {
     );
 };
 
-//<img src={'./Twitch_logo.png'} className="twitchLogo"/>
-//<img src={'./Twitch_logo2.png'} className="twitchIcon"/>
