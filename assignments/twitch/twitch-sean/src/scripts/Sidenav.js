@@ -1,7 +1,6 @@
-//import React from 'react';
 import React, {Component} from 'react';
 import axios from 'axios';
-import Followers from './Followers';
+import TwitchApp from './TwitchApp';
 axios.defaults.headers.common['Client-Id'] = "aswvsgvoi2cppvyconfiuf0pumt0nq";
 
 
@@ -30,7 +29,7 @@ export default class Sidenav extends Component{
                 .then(response=> {
                 console.log(response.data.follows);
                 this.setState({
-                    following : response.data
+                    following : response.data.follows
                   })   
                            
             })
@@ -38,19 +37,23 @@ export default class Sidenav extends Component{
 
 
             console.log(this.state.following.length);  
+            console.log(this.state.following);
            
             
     }
 
     handleClick()
     {
-        console.log("hello there");
+        console.log("button was clicked");
+        <TwitchApp   clicked={true}/>
     }
 
 
     render()
     {
         const { following } = this.state;
+        console.log(following);
+        
 
      return(
         <div className="sidenav">
@@ -72,7 +75,15 @@ export default class Sidenav extends Component{
             </div>
             <div className="bottom">
                 <div className="row">
-                    <Followers />
+                <h1>Following:</h1>
+                 {
+                   
+                    following.map((user, index) =>
+                    {
+                        return <Following user={user.channel} />;
+                    })
+                }
+         
                 </div>
             </div> 
             <div className="searchBar">        
@@ -91,3 +102,16 @@ export default class Sidenav extends Component{
      )
     }
 }
+class Following extends Component
+{
+    render( )
+    {
+        const {user, id} = this.props;
+        console.log(user + "asdfasdf");
+        return(
+        <div className="users col-sm-10">
+            <h2> <a href={user.url}>{user.display_name} </a> </h2>
+        </div> )
+      //  console.log(user.channel.display_name + "is a user in Following");
+    }
+};

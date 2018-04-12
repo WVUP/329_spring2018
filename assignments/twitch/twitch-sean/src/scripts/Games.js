@@ -45,8 +45,8 @@ export default class Games extends Component{
     render()
     {
         const {fetched, loading, games} = this.state;
-        // console.log(games);
-        let channels = games.channels;
+        console.log(games);
+       // let channels = games.channels;
           
      return(
         <div className="row">
@@ -65,19 +65,17 @@ class Game extends Component{
         render( )
         {
             const {game, channels, viewers} = this.props;
-            // console.log(game);
+            console.log(game);
             // console.log(viewers);
             return (            
-                <div className="games col-sm-3">
-                    <div class="col-spaced">
-                        <div className="media-top">
+                <div className="games col-sm-3">                    
+                        <div>
                             <img src = {game.box.large} id="gameBox"/> 
                         </div>
-                        <div className="media-body">
-                            <h3 className="media-heading"> {game.name} </h3> 
+                        <div >
+                            <h3 > {game.name} </h3> 
                             <h4>Viewers: {viewers}</h4>
-                        </div>
-                    </div>
+                        </div>                    
                 </div>
             
             )            
