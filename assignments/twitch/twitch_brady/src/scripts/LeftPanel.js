@@ -3,16 +3,20 @@ import TwitchLogo from './TwitchLogo';
 
 export default function LeftPanel(props){
     return (
-        <div>
-            <div className="container">
-            <div className="col-4 leftPanel"><TwitchLogo/></div>
-            </div>
-            <div>
-            <body>
-                   
-             </body>
+        <div className="container-fluid">
+        <div className="leftPanel">
+        <div className="grayBox"><TwitchLogo/></div>
         </div>
         </div>
     );
 };
-//<div className="col-8 html"></div>
+
+//export default function TopBox(props){
+  //  return (
+    //    <div className="container-fluid">
+      //  <div className="grayBox">
+        //Hello
+        //</div>
+        //</div>
+    //);
+//};

@@ -1,17 +1,13 @@
 import React from 'react';
 import Banner from './Banner';
 import LeftPanel from './LeftPanel';
+import MainPanel from './MainPanel';
 
 export default function TwitchApp(props){
     return (
-        <div>
-            <div className="container">
-            </div>
-            <div>
-            <body>
-                 <LeftPanel/>   
-             </body>
-        </div>
+        <div className="container-fluid">
+         <div className="col-xs-3"><LeftPanel/></div>
+         <div className="col-xs-9"><MainPanel/></div>   
         </div>
     );
 };
@@ -29,3 +25,5 @@ export default function TwitchApp(props){
         //</div>
     //);
 //};
+//
+  //          
