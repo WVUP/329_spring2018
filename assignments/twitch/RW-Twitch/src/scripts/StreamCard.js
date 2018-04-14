@@ -24,12 +24,14 @@ class StreamCard extends Component {
         if(this.state.user)
         {
             console.log(this.state.user)
-            var thumbURL = "https://static-cdn.jtvnw.net/previews-ttv/live_user_" + this.state.user.login + "-240x135.jpg"
+            var thumbURL = "https://static-cdn.jtvnw.net/previews-ttv/live_user_" + this.state.user.login + "-290x185.jpg"
             return(
-                <div className="col-md-3 StreamCard">
+                <div className="StreamCard col-md-3">
                     <img className="" src={thumbURL} alt="Thumbnail"/>
                     <div className="">
+                        <br/>
                         <b className="">{this.state.user.display_name}</b>
+                        <br/>
                         <p className="c">{this.state.data.title}</p>
                     </div>
                 </div>

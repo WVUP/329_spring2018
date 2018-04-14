@@ -41,11 +41,17 @@
 
 .StreamCard {
   text-align: center;
-  padding: 1vh 1vh;
+  padding-top: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
   border: black 1px;
   border-style: solid;
   margin-left: 1vw;
   background-color: #FFF;
+  border-radius: 15px 15px 0 0;
+  img{
+    border-radius: 15px 15px 0 0;
+  }
 }
 
 .StreamRow {
