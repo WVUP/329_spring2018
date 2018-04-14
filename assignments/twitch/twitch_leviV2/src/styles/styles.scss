@@ -1,0 +1,142 @@
+html body{
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  color: white;
+  background-color: #17141f;
+  max-height: 100%;
+  overflow:hidden;
+}
+
+nav{
+  position: fixed;
+  top:0;
+  width: 100%;
+  padding: 0 1%;
+  background-color: #6441A4;
+  height: 50px;
+
+  ul{
+    width: inherit;
+    height: inherit;
+    display: flex;
+    flex-direction: row;
+    flex-flow: row;
+    align-items: center;
+    list-style-type : none;
+    justify-content: start;
+    margin: 0;
+    padding: 0;
+
+    li{
+      padding: 0 1%;
+      
+      a{
+        color: white;
+        text-decoration: none;
+      }
+      a:hover{
+        color: purple;
+        text-decoration: none;
+      }
+
+      img{
+        display: inline;
+        
+      }
+      h5{
+        padding-left: 8px;
+        display: inline;
+      }
+    }
+
+    li:last-child{
+      margin-left: auto;
+    }
+  }
+
+  img{
+    display: inline;
+  }
+}
+
+
+.LeftSideBar{
+  height: 100%;
+  width: 15%;
+  background-color: #17141f;
+  position: fixed;
+  margin-top: 50px;
+  padding: 0 1%;
+  top: 0;
+  left: 0;
+  overflow: auto;
+
+  div{
+
+    hr{
+      margin: 0;
+    }
+  
+    div{
+      img{
+        float: left;
+        margin-right: 4%;
+      }
+      h5, h6{
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+.Content{
+  margin-top: 50px;
+  margin-left: 15%;
+  border-left: 1px solid rgb(218, 216, 222)
+  ;
+}
+
+.GameContainer{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  padding: 2%;
+  //I think this is bad css, but setting the hieght like this
+  //Allows for the scolling to happen
+  height: 90vh;
+  overflow-y: auto;
+
+  // For Flexbox truncating text = https://css-tricks.com/flexbox-truncated-text/
+  div{
+    flex: 1;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    min-width: 21%;
+    padding: 0 3%;
+  }
+}
+
+.hideText{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+
+::-webkit-scrollbar{
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(56, 37, 92);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
