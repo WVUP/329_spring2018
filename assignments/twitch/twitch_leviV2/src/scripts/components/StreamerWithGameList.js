@@ -25,3 +25,59 @@ export function StreamerWithGame(props){
         </div>
     );
 }
+
+//Adds in the Show more or Show Less Functionality
+export class ExpandableStreamerWithGameList extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            Streamers: this.props.Streamers,
+            Display: this.props.Show
+        };
+    }
+
+    showMore(){
+        console.log("Hey I was clicked yes");
+        this.setState((prevState, props) =>{
+            return {
+                Display: prevState.Display + props.Show
+            }
+        });
+    }
+
+    showLess(){
+        this.setState((prevState, props) =>{
+            return {
+                Display: prevState.Display - props.Show
+            }
+        });
+    }
+
+
+    render(){
+
+        let ToShow = this.state.Streamers;
+        ToShow = ToShow.slice(0, this.state.Display);
+
+        let More;
+        let Less;
+
+
+        if(this.state.Display < this.state.Streamers.length){
+            More = <h6 className="ShowMore" onClick={() => this.showMore()}>Show More</h6>
+        }
+
+        if(this.state.Display > this.props.Show){
+            Less = <h6 className="ShowLess" onClick={() => this.showLess()}>Show Less</h6>;
+        }
+        
+        return(
+            <div>
+                <StreamerWithGameList Streamers={ToShow}/>
+                <div className = "MoreOrLessContainer">
+                    {Less}{More}
+                </div>
+            </div>
+        );
+    }
+}
