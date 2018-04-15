@@ -4,7 +4,6 @@ const api = `https://api.twitch.tv/helix/users?id=`
 class StreamCard extends Component {
     constructor(props) {
         super(props);
-        console.log(this.props)
         this.state = {data: this.props.data};
     };
 

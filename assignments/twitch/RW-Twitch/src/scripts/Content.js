@@ -30,19 +30,13 @@ class Content extends Component {
         var streamCards = null
         if(this.state.loaded)
         {
-            console.log('Data:')
-            console.log(this.state.data)
             var streams = this.state.data;
             var row = [];
             row[0] = [];
             var rowCount = 0;
             if(streams){
                 var rows = []
-                streams.map((stream, index) => {
-                    console.log("Row Count: " + (rowCount+1))
-                    console.log("Index: " + index)
-                    console.log(stream)
-                    
+                streams.map((stream, index) => {                    
                     if(index % 4 == 0 && index != 0){
                         rows.push(<StreamRow data={row[rowCount]} key={rowCount} />)
                         rowCount += 1;
