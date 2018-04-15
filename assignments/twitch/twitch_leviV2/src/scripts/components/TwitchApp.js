@@ -5,7 +5,7 @@ import Content from './Content';
 
 export default function TwitchApp(props){
     return (
-        <div>
+        <div className="PageContainer">
             {/* Navigation */}
            <TwitchNav/>
            {/* Left SideBar */}

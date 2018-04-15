@@ -9,16 +9,30 @@ const RecommendedToShow = 4;
 
 export default class LeftSideBar extends React.Component{
     
+
+    textEntered(data){
+        console.log(data);
+    }
+
+    handleSubmit(e){
+        e.preventDefault();
+    }
+
     render(){
         return(
             <div className="LeftSideBar">
-                <div>
+                <div className="UserContentContainer">
                     <TitleWithBreak title="Followed Channels"/>
                     <ExpandableStreamerWithGameList Streamers={FollowedChannels} Show={FollowToShow}/>
                     <TitleWithBreak title="Online Friends"/>
                     <ExpandableStreamerWithGameList Streamers={FollowedChannels} Show={OnlineToShow}/>
                     <TitleWithBreak title="Recommended Channels"/>
                     <ExpandableStreamerWithGameList Streamers={FollowedChannels} Show={RecommendedToShow}/>
+                </div>
+                <div className="LeftPaneFormBox">
+                    <form action=""  onSubmit={(event) => this.handleSubmit(event)}>
+                        <input type="text" onChange={(event, data) => this.textEntered(event, data)}/>
+                    </form>
                 </div>
             </div>
         );

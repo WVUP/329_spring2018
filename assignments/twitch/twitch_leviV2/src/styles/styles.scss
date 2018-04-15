@@ -9,8 +9,6 @@ html body{
 }
 
 nav{
-  position: fixed;
-  top:0;
   width: 100%;
   padding: 0 1%;
   background-color: #6441A4;
@@ -62,23 +60,22 @@ nav{
 
 
 .LeftSideBar{
-  height: 937px;
-  width: 15%;
+  height: 95vh;
   background-color: #17141f;
-  position: fixed;
-  margin-top: 50px;
-  padding: 0 1%;
-  top: 0;
-  left: 0;
-  overflow: auto;
+  flex: 1;
+  position: relative;
 
   div{
-
+    padding: 0 8%;
+    
     hr{
       margin: 0;
     }
   
     div{
+      padding: 0;
+      
+
       img{
         float: left;
         margin-right: 4%;
@@ -93,10 +90,8 @@ nav{
 }
 
 .Content{
-  margin-top: 50px;
-  margin-left: 15%;
   border-left: 1px solid rgb(218, 216, 222);
-  
+  flex: 5;
 }
 
 .GameContainer{
@@ -132,6 +127,10 @@ nav{
   h6{
     flex:1;
   }
+
+  h6:hover{
+    color: #6441A4;
+  }
 }
 
 .ShowMore{
@@ -142,6 +141,37 @@ nav{
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+}
+
+.LeftPaneFormBox{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 5%;
+  background-color: #17141f;
+  border-top: 1px solid rgb(218, 216, 222);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  input{
+    background-color: #17141f;
+  }
+}
+
+.UserContentContainer{
+  overflow: auto;
+  height: 95%;
+  width: 100%;
+  padding: 0 8%;
+
+}
+
+.PageContainer{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 
 

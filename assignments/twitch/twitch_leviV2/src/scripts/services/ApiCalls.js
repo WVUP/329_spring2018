@@ -1,6 +1,6 @@
 
 const baseUrl = "https://api.twitch.tv/helix/";
-const ClientId = "y6kouq97fzl0cu1043kkqc9yylgtfv";
+const ClientId = "<Client Id>";
 
 const header = {
     method: 'Get',
