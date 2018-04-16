@@ -1,11 +1,41 @@
 .twitchLogo{
-  width: 50%;
-  height: 50%;
-}
-.twitchIcon{
   width: 20%;
   height: 20%;
+  position: top;
+}
+
+.twitchIcon{
+  width: 8%;
+  height: 8%;
   padding-left: 15px;
+  position: top;
+}
+
+.twitchProfilePic{
+  width: 6%;
+  height: 6%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  float: left;
+}
+
+.userName{
+  color: #dad8de;
+  padding-top: 15px;
+}
+
+.greenIcon{
+  width: 2%;
+  height: 2%;
+  padding-left: 5px;
+  position: top;
+  display: inline;
+}
+
+.online{
+  color: #b8b5c0;
+  display: inline;
 }
 
 .leftPanel{
@@ -18,7 +48,7 @@
 }
 
 .mainPanel{
-  background-color: purple;
+  background-color: #6408a8;
   size: 100%;
   height: 100%;
   width: 80%;
@@ -29,4 +59,26 @@
 .grayBox{
   background-color: #808080;
   top: 0;
+  position: fixed;
+}
+
+.searchBar{
+  display: inline-block;
+  width: 75%;
+  height: 5%;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  position: absolute; 
+  bottom: 0;
+}
+
+.searchIcon{
+  width: 20%;
+  height: 7%;
+  display: inline-block;
+  border-radius: 2px;
+  position: absolute; 
+  bottom: 0;
+  right: 50px;
 }
