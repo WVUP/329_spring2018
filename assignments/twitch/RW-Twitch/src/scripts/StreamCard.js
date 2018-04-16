@@ -4,7 +4,7 @@ const api = `https://api.twitch.tv/helix/users?id=`
 class StreamCard extends Component {
     constructor(props) {
         super(props);
-        this.state = {data: this.props.data};
+        this.state = {data: this.props.data, embed: this.props.embed};
     };
 
     componentWillMount() {
@@ -25,7 +25,7 @@ class StreamCard extends Component {
             console.log(this.state.user)
             var thumbURL = "https://static-cdn.jtvnw.net/previews-ttv/live_user_" + this.state.user.login + "-290x185.jpg"
             return(
-                <div className="StreamCard col-md-3">
+                <div className="StreamCard col-md-3" onClick={() => this.state.embed(this.state.user.display_name)}>
                     <img className="" src={thumbURL} alt="Thumbnail"/>
                     <div className="">
                         <br/>

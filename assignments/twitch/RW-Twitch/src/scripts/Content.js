@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 import StreamRow from './StreamRow';
-const api = `https://api.twitch.tv/helix/streams?first=20`
+const api = `https://api.twitch.tv/helix/streams?first=9`
 
 class Content extends Component {
     constructor(){
         super();
-        this.state = {data: null, loaded: false};
+        this.reset = this.reset.bind(this);
+        this.embed = this.embed.bind(this);
+        this.state = {data: null, loaded: false, channel: false};
     };
 
     componentDidMount() {
@@ -25,6 +27,15 @@ class Content extends Component {
 
     }
 
+    reset() {
+        this.setState({channel: false});
+    }
+
+    embed(val) {
+        this.setState({channel: val});
+        console.log("WE HIT EMBED")
+    }
+
     render() {
         var streams = null
         var streamCards = null
@@ -38,7 +49,7 @@ class Content extends Component {
                 var rows = []
                 streams.map((stream, index) => {                    
                     if(index % 4 == 0 && index != 0){
-                        rows.push(<StreamRow data={row[rowCount]} key={rowCount} />)
+                        rows.push(<StreamRow data={row[rowCount]} embed={this.embed} key={rowCount} />)
                         rowCount += 1;
                         row[rowCount] = [];
                         row[rowCount].push(stream);
