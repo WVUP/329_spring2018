@@ -1,6 +1,6 @@
 
 const baseUrl = "https://api.twitch.tv/helix/";
-const ClientId = "<Client Id>";
+const ClientId = "y6kouq97fzl0cu1043kkqc9yylgtfv";
 
 const header = {
     method: 'Get',
@@ -20,4 +20,8 @@ async function CallApi(url){
 
 export function GetTopGames(){
     return CallApi(baseUrl + "games/top");
+}
+
+export function GetTopSteamers(){
+  return CallApi(baseUrl + "streamers/top");
 }
