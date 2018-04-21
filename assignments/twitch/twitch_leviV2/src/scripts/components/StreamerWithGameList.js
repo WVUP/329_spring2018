@@ -13,7 +13,7 @@ export default class StreamerWithGameList extends React.Component{
         </div>
         );
     }
-} 
+}
 
 export function StreamerWithGame(props){
     const streamer = props.streamer;
@@ -30,10 +30,12 @@ export function StreamerWithGame(props){
 export class ExpandableStreamerWithGameList extends React.Component{
     constructor(props){
         super(props);
-        this.state = {
-            Streamers: this.props.Streamers,
-            Display: this.props.Show
-        };
+    }
+
+    componentWillMount(){
+      this.state = {
+          Display: this.props.Show
+      };
     }
 
     showMore(){
@@ -56,21 +58,21 @@ export class ExpandableStreamerWithGameList extends React.Component{
 
     render(){
 
-        let ToShow = this.state.Streamers;
+        let ToShow = this.props.Streamers;
+        console.log('ToShow is' + ToShow);
         ToShow = ToShow.slice(0, this.state.Display);
-
         let More;
         let Less;
 
 
-        if(this.state.Display < this.state.Streamers.length){
+        if(this.state.Display < this.props.Streamers.length){
             More = <h6 className="ShowMore" onClick={() => this.showMore()}>Show More</h6>
         }
 
         if(this.state.Display > this.props.Show){
             Less = <h6 className="ShowLess" onClick={() => this.showLess()}>Show Less</h6>;
         }
-        
+
         return(
             <div>
                 <StreamerWithGameList Streamers={ToShow}/>

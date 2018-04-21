@@ -8,30 +8,56 @@ const OnlineToShow = 3;
 const RecommendedToShow = 4;
 
 export default class LeftSideBar extends React.Component{
-    
+    constructor(props){
+      super(props);
+      this.state = {
+        search: ''
+      };
+    }
 
-    textEntered(data){
-        console.log(data);
+    textEntered(event){
+        console.log("Search term is" + event.target.value);
+          this.setState({
+            search: event.target.value
+          });
     }
 
     handleSubmit(e){
         e.preventDefault();
     }
 
+    sortDataWithTerm(searchTerm, data){
+      if(searchTerm == ''){
+        return data;
+      }
+      var filtered = data.filter(datum =>
+          datum.Name.toUpperCase().includes(searchTerm.toUpperCase())
+          || datum.Game.toUpperCase().includes(searchTerm.toUpperCase())
+      );
+      return filtered;
+    }
+
     render(){
+        let term = this.state.search;
+        let streamers = this.sortDataWithTerm(term, FollowedChannels);
+        console.log('Data outside is' + streamers)
+
         return(
             <div className="LeftSideBar">
                 <div className="UserContentContainer">
                     <TitleWithBreak title="Followed Channels"/>
-                    <ExpandableStreamerWithGameList Streamers={FollowedChannels} Show={FollowToShow}/>
+                    <ExpandableStreamerWithGameList Streamers={streamers} Show={FollowToShow}/>
                     <TitleWithBreak title="Online Friends"/>
-                    <ExpandableStreamerWithGameList Streamers={FollowedChannels} Show={OnlineToShow}/>
+                    <ExpandableStreamerWithGameList Streamers={streamers} Show={OnlineToShow}/>
                     <TitleWithBreak title="Recommended Channels"/>
-                    <ExpandableStreamerWithGameList Streamers={FollowedChannels} Show={RecommendedToShow}/>
+                    <ExpandableStreamerWithGameList Streamers={streamers} Show={RecommendedToShow}/>
                 </div>
                 <div className="LeftPaneFormBox">
-                    <form action=""  onSubmit={(event) => this.handleSubmit(event)}>
-                        <input type="text" onChange={(event, data) => this.textEntered(event, data)}/>
+                    <form action="" onSubmit={(event) => this.handleSubmit(event)}>
+                      <div className="form-group has-feedback" style={{margin: 'auto'}}}>
+                        <input type="text" className="form-control" onChange={(event) => this.textEntered(event)}/>
+                        <i className="glyphicon glyphicon-search form-control-feedback"></i>
+                      </div>
                     </form>
                 </div>
             </div>
