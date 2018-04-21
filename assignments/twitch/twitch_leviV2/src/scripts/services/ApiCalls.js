@@ -23,5 +23,5 @@ export function GetTopGames(){
 }
 
 export function GetTopSteamers(){
-  return CallApi(baseUrl + "streamers/top");
+  return CallApi(baseUrl + "streams");
 }

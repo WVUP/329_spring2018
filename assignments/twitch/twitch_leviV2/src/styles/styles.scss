@@ -10,8 +10,8 @@ html body{
 
 nav{
   width: 100%;
-  // padding: 0 1%;
-  background-color: #6441A4;
+  padding: 0 1%;
+  background-color: #392e5c;
   height: 8vh;
 
   ul{
@@ -28,7 +28,7 @@ nav{
 
     li{
       min-width: 70px;
-      padding: 0 1%;
+      margin: auto 1%;
       width: auto;
       a{
 
@@ -42,7 +42,6 @@ nav{
 
       img{
         display: inline;
-
       }
       h5{
         padding-left: 8px;
@@ -107,8 +106,6 @@ nav{
   align-items: flex-start;
   padding: 2%;
   justify-content: space-around;
-  //I think this is bad css, but setting the hieght like this
-  //Allows for the scolling to happen
   height: 92vh;
   overflow-y: auto;
 
@@ -119,7 +116,7 @@ nav{
     overflow: hidden;
     white-space: nowrap;
     min-width: 20%;
-    padding: 0 3%;
+    margin: 2% 2%;
     max-width: 20%;
   }
 }
@@ -181,6 +178,19 @@ nav{
     flex-direction: row;
 }
 
+.clickable{
+  display: flex;
+  align-items: center;
+  height: 100%;
+
+  a{
+    flex:1
+  }
+}
+
+.clickable:hover{
+  border-bottom: 5px solid #6441a4;
+}
 
 ::-webkit-scrollbar{
   width: 6px;

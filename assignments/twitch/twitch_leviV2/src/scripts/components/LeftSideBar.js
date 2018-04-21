@@ -54,7 +54,7 @@ export default class LeftSideBar extends React.Component{
                 </div>
                 <div className="LeftPaneFormBox">
                     <form action="" onSubmit={(event) => this.handleSubmit(event)}>
-                      <div className="form-group has-feedback" style={{margin: 'auto'}}}>
+                      <div className="form-group has-feedback" style={{margin: 'auto'}}>
                         <input type="text" className="form-control" onChange={(event) => this.textEntered(event)}/>
                         <i className="glyphicon glyphicon-search form-control-feedback"></i>
                       </div>
