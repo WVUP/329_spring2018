@@ -4,7 +4,6 @@ import StreamCard from './StreamCard';
 class StreamRow extends Component{
     constructor(props) {
         super(props);
-        console.log(this.props)
         this.state = {data: this.props.data, embed: this.props.embed};
     };
 
