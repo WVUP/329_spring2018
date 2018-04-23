@@ -22,26 +22,30 @@
       #logo
       {
           position: relative;
-          top: 0;
+          top: 0%;
           width: 45%;
       }
     
       #icon
       {
           position: relative;
-          top: 0;
-          width: 45%;
+          top: 0%;
+          width: 25%;
       }
 
       .propic
       {
-          position: relative;
-          top: 0;
-          width: 15%;
+          position: absolute;
+          img{
+            width:  25%;
+            bottom: 0;
+            height: 49%;
+          }
       }
     
       .topleft
       {
+        position: relative;
           height: 15%;
           background: grey;
       }
