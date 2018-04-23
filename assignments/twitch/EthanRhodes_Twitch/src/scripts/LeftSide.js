@@ -25,11 +25,6 @@ export default class LeftSide extends Component
         .catch((err)=> {console.log(err)})
     }
 
-    componentDidMount()
-    {
-
-    }
-
     render()
     {
         return(
