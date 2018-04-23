@@ -5,9 +5,9 @@ import MainPanel from './MainPanel';
 
 export default function TwitchApp(props){
     return (
-        <div className="container-fluid">
-         <div className="col-xs-3"><LeftPanel/></div>
-         <div className="col-xs-9"><MainPanel/></div>   
+        <div>
+          <div className="col-xs-3"><LeftPanel/></div>
+          <div className="col-xs-9"><MainPanel/></div>   
         </div>
     );
 };
