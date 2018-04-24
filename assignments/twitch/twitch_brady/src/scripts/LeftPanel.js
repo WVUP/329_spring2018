@@ -5,11 +5,14 @@ import Search from './Search';
 
 export default function LeftPanel(props){
     return (
-        <div className="container-fluid">
-        <div className="leftPanel">
-        <div className="grayBox"><TwitchLogo/><ProfileInfo/></div>
-        <div><Search/></div>
-        </div>
+        <div className="row">
+            <div className="leftPanel">
+                <div className="grayBox">
+                    <TwitchLogo/>
+                    <ProfileInfo/>
+                </div>
+                <Search/>
+            </div>
         </div>
     );
 };
@@ -23,3 +26,7 @@ export default function LeftPanel(props){
         //</div>
     //);
 //};
+
+//
+//
+//

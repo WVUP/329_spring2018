@@ -1,21 +1,18 @@
 .twitchLogo{
-  width: 20%;
-  height: 20%;
+  width: 150px;
   position: top;
 }
 
 .twitchIcon{
-  width: 8%;
-  height: 8%;
+  width: 55px;
   padding-left: 15px;
   position: top;
 }
 
 .twitchProfilePic{
-  width: 6%;
-  height: 6%;
+  width: 50px;
   padding-top: 10px;
-  padding-bottom: 10px;
+  padding-left: 10px;
   padding-right: 10px;
   float: left;
 }
@@ -26,21 +23,24 @@
 }
 
 .greenIcon{
-  width: 2%;
-  height: 2%;
   padding-left: 5px;
-  position: top;
   display: inline;
+  position: relative;
+  left: 43px;
+  bottom: 12px;
+  color: #14b866;
 }
 
 .online{
   color: #b8b5c0;
   display: inline;
+  position: relative;
+  left: 43px;
+  bottom: 11px;
 }
 
 .leftPanel{
   background-color: #60635b;
-  size: 100%;
   height: 100%;
   width: 20%;
   position: fixed;
@@ -59,26 +59,44 @@
 .grayBox{
   background-color: #808080;
   top: 0;
-  position: fixed;
+  width: 100%;
 }
 
 .searchBar{
   display: inline-block;
-  width: 75%;
-  height: 5%;
   background-color: #fff;
-  border-radius: 2px;
+  border-radius: 5px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
-  position: absolute; 
+  position: absolute;
+  width: 205px;
+  height: 28px;
   bottom: 0;
+  left: 0;
 }
 
 .searchIcon{
-  width: 20%;
-  height: 7%;
   display: inline-block;
   border-radius: 2px;
   position: absolute; 
   bottom: 0;
-  right: 50px;
+  right: 39px;
+  color: white;
+  background-color: black;
+  border-radius: 5px;
+}
+
+.games{
+  display: flex;
+}
+
+.gameFormat img{
+  padding-top: 25px;
+  padding-left: 25px;
+  height: 300px;
+  width: 225px;
+}
+
+.nameOfGames{
+  color: #808080;
+  text-align: center;
 }
