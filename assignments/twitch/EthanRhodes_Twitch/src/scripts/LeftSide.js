@@ -34,7 +34,10 @@ export default class LeftSide extends Component
                     <img src="src/images/twitchicon.png" alt="" id="icon"/>
                     <div className="propic">
                         <img src={this.state.logo}/>
-                    </div>    
+                    </div>
+                    {/* <div className="proname">
+                        <h2 className="media-heading"> {this.state.name} </h2>
+                    </div>      */}
                 </div>
                 <div className="purpbar"></div>
             <div className="purpbar"></div>
