@@ -1,15 +1,29 @@
 import React from 'react';
 import BoxArtParser from '../services/BoxArtParser';
+import {GetTopGames} from '../services/ApiCalls';
 
 export default class GameList extends React.Component{
     constructor(props){
         super(props);
+        this.state ={
+          games:[]
+        }
+    }
+
+    componentWillMount(){
+        GetTopGames()
+        .then(result =>{
+            this.setState({
+                games: result
+            })
+        });
     }
 
     render(){
-        let Content;
-        if(this.props.Games != undefined)
-            Content = this.props.Games.map((game, index) => <GameCard key={game.name} Game={game}/>);
+        let Content = "Loading...";
+        if(this.state.games != null)
+            Content = this.state.games.map((game, index) => <GameCard key={game.name} Game={game}/>);
+
 
         return(
             <div className="GameContainer">
@@ -17,7 +31,7 @@ export default class GameList extends React.Component{
             </div>
         );
     }
-} 
+}
 
 
 export function GameCard(props){

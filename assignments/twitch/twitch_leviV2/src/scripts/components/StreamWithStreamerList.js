@@ -1,5 +1,7 @@
 import React from 'react';
 import BoxArtParser from '../services/BoxArtParser';
+import { GetTopSteamers } from '../services/ApiCalls';
+
 
 export function StreamWithStreamer(props){
   const stream = props.Stream;
@@ -15,14 +17,31 @@ export function StreamWithStreamer(props){
   );
 }
 
-export default function StreamWithStreamerList(props){
+export default class StreamWithStreamerList extends React.Component{
+  constructor(props){
+    super(props);
+    this.state ={
+      streams:[]
+    }
+  }
 
-  let Content = props.Streams.map((stream, index) =>
-    <StreamWithStreamer key={stream.id} Stream={stream}/>);
+  componentWillMount(){
+    GetTopSteamers()
+    .then(result =>{
+      this.setState({
+        streams:result
+      })
+    });
+  }
 
-  return(
-    <div className="GameContainer">
-      {Content}
-    </div>
-  );
+  render(){
+    let Content = this.state.streams.map((stream, index) =>
+      <StreamWithStreamer key={stream.id} Stream={stream}/>);
+
+    return(
+      <div className="GameContainer">
+        {Content}
+      </div>
+    );
+  }
 }

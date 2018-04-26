@@ -1,54 +1,18 @@
 import React from 'react';
-import {GetTopGames, GetTopSteamers} from '../services/ApiCalls';
 import GameList from './GameList';
 import StreamWithStreamerList from './StreamWithStreamerList';
+import {Route} from 'react-router-dom';
 
 export default class Content extends React.Component{
     constructor(props){
         super(props);
-        this.state = {
-            games:[],
-            streams:[]
-        }
-    }
-
-    componentWillMount(){
-        GetTopGames()
-        .then(result =>{
-            this.setState({
-                games: result
-            })
-        });
-
-        GetTopSteamers()
-        .then(result =>{
-          this.setState({
-            streams:result
-          })
-        });
     }
 
     render(){
-        //content is being passed in showStreamers
-
-        let games = this.state.games;
-        let streams = this.state.streams;
-        let Content = "Loading...";
-        console.log("Games are"+ games);
-        if(games !== null){
-            Content = <GameList Games={games}/>;
-        }
-
-        if(this.props.ShowStreamers){
-          Content = "Loading Streamers...";
-          if(streams !== null){
-            Content = <StreamWithStreamerList Streams={streams}/>
-          }
-        }
-
         return(
             <div className="Content">
-                {Content}
+                <Route exact path="/" component={GameList}/>
+                <Route path="/streams" component={StreamWithStreamerList}/>
             </div>
         );
     }
