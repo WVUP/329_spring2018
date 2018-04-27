@@ -1,7 +1,8 @@
 import React from 'react';
 import GameList from './GameList';
 import StreamWithStreamerList from './StreamWithStreamerList';
-import {Route} from 'react-router-dom';
+import { Route } from 'react-router-dom';
+import LiveStream from './LiveStream';
 
 export default class Content extends React.Component{
     constructor(props){
@@ -13,6 +14,7 @@ export default class Content extends React.Component{
             <div className="Content">
                 <Route exact path="/" component={GameList}/>
                 <Route path="/streams" component={StreamWithStreamerList}/>
+                <Route path="/livestream/:channel" component={LiveStream}/>
             </div>
         );
     }

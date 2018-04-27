@@ -25,3 +25,8 @@ export function GetTopGames(){
 export function GetTopSteamers(){
   return CallApi(baseUrl + "streams");
 }
+
+export function GetUser(userId){
+  console.log(userId);
+  return CallApi(baseUrl + `users?id=${userId}`);
+}

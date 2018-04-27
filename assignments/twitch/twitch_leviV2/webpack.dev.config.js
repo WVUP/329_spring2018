@@ -35,6 +35,7 @@ module.exports = {
 
         publicPath: '/'
         // match the output `publicPath`
+
     },
     module: {
         rules: [

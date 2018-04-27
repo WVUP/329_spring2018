@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter, Route} from 'react-router-dom';
+import {HashRouter, Route} from 'react-router-dom';
 
 import TwitchApp from './components/TwitchApp';
 
@@ -9,9 +9,9 @@ import 'bootstrap-sass/assets/stylesheets/_bootstrap.scss';
 
 
 ReactDOM.render(
-  <BrowserRouter>
+  <HashRouter>
     <div>
-      <TwitchApp/>,
+      <Route path="*" component={TwitchApp}/>
     </div>
-  </BrowserRouter>,
+  </HashRouter>,
   document.getElementById('react-container'));
