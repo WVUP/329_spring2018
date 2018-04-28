@@ -128,9 +128,14 @@ nav{
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
-    min-width: 20%;
+    min-width: 15%;
     margin: 2% 2%;
-    max-width: 20%;
+    // max-width: 20%;
+
+    img{
+      width: 100%;
+      height: auto;
+    }
   }
 }
 
@@ -205,6 +210,53 @@ nav{
 
 .clickable:hover{
   border-bottom: 5px solid #6441a4;
+}
+
+.StreamContainer{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  padding: 2%;
+  justify-content: space-around;
+  height: 92vh;
+  overflow-y: auto;
+  div{
+    flex: 1;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    min-width: 21%;
+    margin: 2% 2%;
+
+    a{
+      color: #9d9d9d;
+      text-decoration: none;
+    }
+
+    a:visited{
+      text-decoration: none;
+      color:#9d9d9d;
+    }
+    a:active{
+      text-decoration: none;
+      color:#FFF;
+    }
+    a:link{
+      color:#FFF;
+      text-decoration: none;
+    }
+
+    a:hover{
+      color: #FFF;
+      text-decoration: none;
+    }
+
+    img{
+      width: 100%;
+      height: auto;
+    }
+  }
 }
 
 ::-webkit-scrollbar{

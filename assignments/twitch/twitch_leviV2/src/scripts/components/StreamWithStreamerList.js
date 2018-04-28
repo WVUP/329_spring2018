@@ -25,7 +25,7 @@ export class StreamWithStreamer extends React.Component{
   render(){
     const stream = this.props.Stream;
     const channelName = this.state.channelName;
-    let thumbnail = BoxArtParser(stream.thumbnail_url, 300, 200);
+    let thumbnail = BoxArtParser(stream.thumbnail_url, 320, 180);
     return (
       <div >
         <Link to={`/livestream/${channelName}`}>
@@ -60,7 +60,7 @@ export default class StreamWithStreamerList extends React.Component{
       <StreamWithStreamer key={stream.id} Stream={stream}/>);
 
     return(
-      <div className="GameContainer">
+      <div className="StreamContainer">
         {Content}
       </div>
     );
