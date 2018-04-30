@@ -25,6 +25,12 @@ export default class LeftSide extends Component
         .catch((err)=> {console.log(err)})
     }
 
+    handleChange(event)
+    {
+        console.log(event.target.value);
+        this.props.Search(event.target.value);
+    }
+
     render()
     {
         return(
@@ -42,7 +48,7 @@ export default class LeftSide extends Component
                 <div className="purpbar"></div>
             <div className="purpbar"></div>
             <div className="purpbar"></div>
-            <input type="text" placeholder="Search....." className="search" id="getData"/>
+            <input type="text" placeholder="Search....." className="search" id="getData" onChange = {(event) => this.handleChange(event)}/>
             </div>
         )
     }
