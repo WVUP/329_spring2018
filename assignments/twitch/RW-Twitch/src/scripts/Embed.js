@@ -9,8 +9,11 @@ class Embed extends Component {
     };
 
     render() {
+        const {match: { params} } = this.props;
 
-        var url = "http://player.twitch.tv/?channel=" + this.state.channel;
+        const { channel } = params;
+
+        var url = "http://player.twitch.tv/?channel=" + channel;
         console.log(url);
 
         return (

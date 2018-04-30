@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 const api = `https://api.twitch.tv/helix/users?id=`
 
 class StreamCard extends Component {
@@ -24,16 +25,20 @@ class StreamCard extends Component {
         {
             console.log(this.state.user)
             var thumbURL = "https://static-cdn.jtvnw.net/previews-ttv/live_user_" + this.state.user.login + "-290x185.jpg"
+            const path = "/" + this.state.user.display_name
+            console.log(path)
             return(
-                <div className="StreamCard col-md-3" onClick={() => this.state.embed(this.state.user.display_name)}>
-                    <img className="" src={thumbURL} alt="Thumbnail"/>
-                    <div className="">
-                        <br/>
-                        <b className="">{this.state.user.display_name}</b>
-                        <br/>
-                        <p className="c">{this.state.data.title}</p>
+                    <div className="StreamCard col-md-3">
+                        <Link to={path}>
+                            <img className="" src={thumbURL} alt="Thumbnail"/>
+                            <div className="">
+                                <br/>
+                                <b className="">{this.state.user.display_name}</b>
+                                <br/>
+                                <p className="c">{this.state.data.title}</p>
+                            </div>
+                        </Link>
                     </div>
-                </div>
             )
         }
         else{

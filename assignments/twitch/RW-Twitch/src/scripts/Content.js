@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Display from './Display';
 import Embed from './Embed';
 
@@ -26,16 +27,9 @@ class Content extends Component {
                 })
                 .then(response => response.json())
                 .then(jsondata => this.setState({
-                    data: jsondata.data
-                }))
-                .then(this.setState({
-                    loaded: true
-                }))
+                    data: jsondata.data, loaded: true
+                }));
         }
-    }
-
-    componentWillMount() {
-
     }
 
     reset() {
@@ -54,13 +48,14 @@ class Content extends Component {
         console.log("Content rendering")
         if(this.state.loaded){
             var data = this.state.data
-            if (this.state.channel === false) {
-                console.log("Sending: ")
-                console.log(data)
-                var view = (<Display data={data} loaded={this.state.loaded} embed={this.embed}/>);
-            } else {
-                var view = ( <Embed channel={this.state.channel}/>)
-            }
+                var view = (
+                    <Router>
+                        <div>
+                            <Route path="/" render={() => <Display data={data} loaded={this.state.loaded} embed={this.embed}/>}/>
+                            <Route path="/:channel" render={(props) => <Embed {...props}/>}/>
+                        </div>
+                    </Router>
+                )
             return (
             <div className="content">
                 {view}

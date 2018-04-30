@@ -15,13 +15,14 @@ class Display extends Component {
         console.log("Display rendering")
         console.log(this.state.data)
         console.log(this.state.loaded)
-        if(this.state.data){
+        if(this.props.data){
             var streams = null
             var streamCards = null
             var data = this.state.data
+            console.log(data)
             if (this.state.loaded) {
                 console.log("Locked and Loaded")
-
+                streams = this.state.data
                 var row = [];
                 row[0] = [];
                 var rowCount = 0;
@@ -29,7 +30,7 @@ class Display extends Component {
                     var rows = []
                     streams.map((stream, index) => {
                         if (index % 4 == 0 && index != 0) {
-                            rows.push( <StreamRow data={row[rowCount]} embed={this.embed} key={rowCount}/> )
+                            rows.push( <StreamRow data={row[rowCount]} embed={this.state.embed} key={rowCount}/> )
                             rowCount += 1; row[rowCount] = []; row[rowCount].push(stream);
                         }else { 
                             row[rowCount].push(stream);
