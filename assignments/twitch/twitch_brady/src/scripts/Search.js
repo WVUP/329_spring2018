@@ -8,12 +8,3 @@ export default function Search(props) {
         </div>
     );
 };
-
-//
-//
-//
-//<div className="col-xs-9">                
-//</div>
-//<div className="col-xs-3">
-    
-//</div>
