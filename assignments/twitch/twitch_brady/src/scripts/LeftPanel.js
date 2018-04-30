@@ -2,6 +2,7 @@ import React from 'react';
 import TwitchLogo from './TwitchLogo';
 import ProfileInfo from './ProfileInfo';
 import Search from './Search';
+import DropDownList from './DropDownList';
 
 export default function LeftPanel(props){
     return (
@@ -11,22 +12,9 @@ export default function LeftPanel(props){
                     <TwitchLogo/>
                     <ProfileInfo/>
                 </div>
+                <DropDownList/>
                 <Search/>
             </div>
         </div>
     );
 };
-
-//export default function TopBox(props){
-  //  return (
-    //    <div className="container-fluid">
-      //  <div className="grayBox">
-        //Hello
-        //</div>
-        //</div>
-    //);
-//};
-
-//
-//
-//

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function TopRowGames(props) {
+export default function BottomRowGames(props) {
     return (
         <div className="games">
             <div className="gameFormat">
