@@ -1,37 +1,27 @@
 import React from 'react';
 import Games from './Games';
 import Sidenav from './Sidenav';
+import Banner from './Banner';
+import Stream from './Stream';
+import Content from './Content';
 
 
 export default function TwitchApp(props){
-
-   
-    console.log(props.clicked);
-    if(props.clicked == true)
-    {
+    
         return (
-            <div className="row">       
-            <div className="col-md-3">
-                    <Sidenav />
-            </div>        
+
+        <div>
             <div>
-               {/* component showing embedded video here */}
+                <Banner />
+            </div>
+            <div className="row">       
+                <div className="col-md-3">
+                    <Sidenav />
+                </div>
+                <div className="col-md-9">
+                    <Content />
+                </div>
             </div>
         </div>
         )
-    }
-    else
-    {
-        return (
-            <div className="row">       
-                <div className="col-md-3">
-                        <Sidenav />
-                </div>        
-                <div className="col-md-9" id="gamesDiv">   
-                    <Games listNameFromParent="Peanuts" />
-                </div>
-            </div>
-        )
-    }                    
-    
 };

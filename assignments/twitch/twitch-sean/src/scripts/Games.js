@@ -1,38 +1,19 @@
 import React, {Component} from 'react';
+import { GetTopGames } from './apiCalls';
 
 export default class Games extends Component{
     constructor(props){
         super(props);
-        console.log(props.listNameFromParent)
+        console.log()
         this.state={
-            games: [],
-            fetched: false,
-            loading :false,
-            
-        };
-    }
+            games: []            
+        }
+    };
 
     componentWillMount(){
-        this.setState({
-          loading : true
-        });
-        let header = new Headers({
-            'Client-Id' : "aswvsgvoi2cppvyconfiuf0pumt0nq"
-        })
-
-        var myInit = {
-            method: 'GET',
-            headers : header
-        }
-        fetch('https://api.twitch.tv/kraken/games/top/?limit=20', myInit)
-        .then(res=>res.json())
-        .then(response=>{
-          this.setState({
-            games : response.top,
-            loading : true,
-            fetched : true
-          });
-        });
+       GetTopGames()
+        .then(result => {this.setState({games: result})})
+        console.log(this.state.games);
       }
     
     componentDidMount(){
@@ -44,40 +25,29 @@ export default class Games extends Component{
 
     render()
     {
-        const {fetched, loading, games} = this.state;
-        console.log(games);
-       // let channels = games.channels;
+        let content = "Loading...";
+        if(this.state.games != null)
+        {
+            content = this.state.games.map((game, index) => <Game key={game.name} Game={game}/> )
+        }
+        console.log(this.state.games);
+      
           
      return(
-        <div className="row">
-            {
-                games.map( (game, channels, viewers) => {
-                    return <Game game={game.game} viewers={game.viewers}  />;
-                })
-            }
+        <div className="TopGames">
+            {content}
          </div>     
      )
     }
 }
 
-class Game extends Component{
-  
-        render( )
-        {
-            const {game, channels, viewers} = this.props;
-            console.log(game);
-            // console.log(viewers);
+export function Game(props) {
+  const game = props.Game
             return (            
-                <div className="games col-sm-3">                    
-                        <div>
-                            <img src = {game.box.large} id="gameBox"/> 
-                        </div>
-                        <div >
-                            <h3 > {game.name} </h3> 
-                            <h4>Viewers: {viewers}</h4>
-                        </div>                    
+                <div>                    
+                    <img src={game.game.box.large} id="gameBox"/> 
+                    <h3 className="gameText"> {game.game.name} </h3> 
+                    <h4>Viewers: {game.viewers}</h4>                       
                 </div>
-            
-            )            
-        }
+            )           
     };

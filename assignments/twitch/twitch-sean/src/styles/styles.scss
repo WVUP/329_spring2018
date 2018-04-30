@@ -1,90 +1,90 @@
-#react-container {
+html body{
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  color: white;
+  background-color: #17141f;
+  max-height: 100%;
+  overflow: scroll;
+}
+
+#container{
+  height: 100px;
+  font-size: 34;
+
+  ul#flex-container{
+    list-style-type: none;  
+    margin: 0;
+    padding: 0;
+    display:flex;
+    flex-direction: row;    
+    flex-wrap: nowrap;
+    height: 300px;
+    align-items: flex-start;
+
+    li{
+      background: #6441a5;
+      height: 50px;
+      width: 100px;
+      color:#fff;
+      font-weight: bold;
+      font-size: 1.2em;
+      text-align: center;
+      line-height: 50px; 
+
+    }
+        :first-child {padding-left:25px; flex-grow: 1;}
+        :nth-child(2) { text-align: left; font-size: .5em;  }
+        :nth-child(3) { text-align: left; font-size: .5em; }
+        :nth-child(4) { text-align: left; font-size: 1.0em;}
+        :last-child { flex-grow:5; font-size: 2.2em; text-align: right; padding-right: 30px}
+    }
+  
+}
+.TopGames{
   display:flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-.sidenav{
-   height:100%;
-   
-  //  position: fixed;
-   z-index: 1;
-   top:0;
-   left:0;
-   background-color: #474747;
-   overflow-x: hidden; 
-
-
-    p { color: #696969; font-size: 30px; }
-    
-    #twitchLogo {float: left; width: 250px; }
-    #userLogo {  height:40px; width:40px;}
-
-    .top{
-      background-color: #b9b0b0;
-      height: 8%;
-    }
-
-    .media{
-      position: absolute; top: 70px; left:20px;
-    }
-    .bottom{
-      top: 50%;
-      left: 5%;
-    }
-    .searchBar {
-      position:fixed;
-      left:1%;
-      top:95%;
-      .searchField{
-        position:absolute;
-        left:45%;
-        top:95%;
-      width:30%;
-      background-color:white;
-      color:grey;
-      }
-      .submitButton{
-        position: absolute;
-
-      }
-    }
-}
-
-
-.row{
-  padding: 3px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
+  align-items: flex-start;
+  background-color: #6441a5;
+  margin-top: -50px;
+  justify-content: space-around;
+  
 
-}
-.following{
-  color: red;
-}
-.games{  
-  -webkit-flex-wrap: wrap; /* Safari 6.1+ */
-  display: flex-start;   
-  flex-wrap: wrap;  
-  padding-right: 10px;
-
-  h3{
+  div{
+    flex: 1;
+    text-overflow: ellipsis;
     overflow: hidden;
-    padding: 5% 10% 0% 0%;
-  }
+    white-space: nowrap;
+    min-width: 15%;
+    margin: 2% 2%;
+    // max-width: 20%;
 
-  h4{
-    overflow: hidden;   
-    position: initial;        
+    img{
+      width: 100%;
+      height: auto;
+    }
   }
+  
+}
+
+.gameText
+{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 #gameBox{
       height: 250px;
      
+}
+
+.sidenav{
+  .bottom{
+    padding-left: 25px;
+    margin-top: -50px;
+  }
 }
 
 
